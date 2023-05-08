@@ -1,17 +1,29 @@
 package org.example;
 
+
 public class Game {
+ 
+    private int scores = 0;
+    private Frame frames;
 
-    private int rolls = 0;
-
+    
+    public Game(){
+        this.frames=new Frame();
+    }
+    
     public void roll(int number) throws Exception {
         if( number < 0 || number > 10){
             throw(new Exception());
         }
-        rolls+=number;
+        scores +=number;
     }
 
     public int score(){
-        return rolls;
+        return scores;
     }
+
+    public Frame getFrames() {
+        return frames;
+    }
+
 }
