@@ -1,4 +1,5 @@
 import org.example.Game;
+import org.example.State;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -40,4 +41,11 @@ public class GameTest {
 
         assertEquals(9, game.score());
     }
+@Test
+    public void leSpareEstQuandUnJoueurFaitTomberLesDixQuillesEnDeuxCoups()throws Exception{
+        //WHEN
+    game.roll(6);
+    game.roll(4);
+        assertEquals(game.getFrames().getState(), State.SPARE);
+}
 }
